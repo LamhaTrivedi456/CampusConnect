@@ -132,34 +132,34 @@ const updateProfile = async (req, res) => {
 
 // API to book appointment 
 const bookAppointment = async (req, res) => {
-
     try {
-
-        const { userId, docId, slotDate, slotTime } = req.body
-        const docData = await doctorModel.findById(docId).select("-password")
+        const { userId, docId, slotDate, slotTime } = req.body;
+        const docData = await doctorModel.findById(docId).select("-password");
 
         if (!docData.available) {
-            return res.json({ success: false, message: 'Doctor Not Available' })
+            return res.json({ success: false, message: 'Professor Not Available' });
         }
 
-        let slots_booked = docData.slots_booked
+        let slots_booked = docData.slots_booked;
 
-        // checking for slot availablity 
+        // 🔧 Ensure slots_booked is an object
+        if (typeof slots_booked !== 'object' || slots_booked === null) {
+            slots_booked = {};
+        }
+
+        // ⏰ Check slot availability
         if (slots_booked[slotDate]) {
             if (slots_booked[slotDate].includes(slotTime)) {
-                return res.json({ success: false, message: 'Slot Not Available' })
-            }
-            else {
-                slots_booked[slotDate].push(slotTime)
+                return res.json({ success: false, message: 'Slot Not Available' });
+            } else {
+                slots_booked[slotDate].push(slotTime);
             }
         } else {
-            slots_booked[slotDate] = []
-            slots_booked[slotDate].push(slotTime)
+            slots_booked[slotDate] = [slotTime];
         }
 
-        const userData = await userModel.findById(userId).select("-password")
-
-        delete docData.slots_booked
+        const userData = await userModel.findById(userId).select("-password");
+        delete docData.slots_booked;
 
         const appointmentData = {
             userId,
@@ -170,22 +170,22 @@ const bookAppointment = async (req, res) => {
             slotTime,
             slotDate,
             date: Date.now()
-        }
+        };
 
-        const newAppointment = new appointmentModel(appointmentData)
-        await newAppointment.save()
+        const newAppointment = new appointmentModel(appointmentData);
+        await newAppointment.save();
 
-        // save new slots data in docData
-        await doctorModel.findByIdAndUpdate(docId, { slots_booked })
+        // ✅ Save updated slots
+        await doctorModel.findByIdAndUpdate(docId, { slots_booked });
 
-        res.json({ success: true, message: 'Appointment Booked' })
+        res.json({ success: true, message: 'Appointment Booked' });
 
     } catch (error) {
-        console.log(error)
-        res.json({ success: false, message: error.message })
+        console.log(error);
+        res.json({ success: false, message: error.message });
     }
+};
 
-}
 
 // API to cancel appointment
 const cancelAppointment = async (req, res) => {

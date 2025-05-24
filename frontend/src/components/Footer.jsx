@@ -9,11 +9,11 @@ const Footer = () => {
 
         <div>
           <a href='#' style={{ display: 'flex', alignItems: 'center', fontSize: '1.2em' }}>
-            <FaUserDoctor style={{ marginRight: '8px' }} />Prescripto
+            <FaUserDoctor style={{ marginRight: '8px' }} />CampusConnect
           </a>
-          <p className='w-full md:w-2/3 text-gray-600 leading-6'>Digital HealthCare for Everyone
+          <p className='w-full md:w-2/3 text-gray-600 leading-6'>
 
-            Revolutionizing Healthcare, Virtually. Experience seamless access to trusted healthcare workers and personalized care anytime, anywhere with our innovative telemedicine platform.</p>
+            Connecting Students is our one-stop platform to explore campus life, discover top faculty, stay updated on university events, and schedule appointments—all in a few clicks. Built for students, guided by mentors, and designed to keep you informed, engaged, and ahead in your academic journey.</p>
         </div>
 
         <div>
@@ -29,8 +29,8 @@ const Footer = () => {
         <div>
           <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
           <ul className='flex flex-col gap-2 text-gray-600'>
-            <li>+234 000 000 000</li>
-            <li>prescripto@gmail.com</li>
+            <li>+91 9664428271</li>
+            <li>lamhatrivedi546@gmail.com</li>
           </ul>
         </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
 
       <div>
         <hr />
-        <p className='py-5 text-sm text-center'>Copyright 2024 @ prescripto.com - All Right Reserved.</p>
+        <p className='py-5 text-sm text-center'>Copyright 2025 @ CampusConnect.com - All Right Reserved.</p>
       </div>
 
     </div>

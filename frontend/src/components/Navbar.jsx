@@ -21,20 +21,20 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-[#ADADAD]'>
       <a href='#' style={{ display: 'flex', alignItems: 'center', fontSize: '1.2em' }}>
-  <FaUserDoctor style={{ marginRight: '8px' }} />Prescripto
+  <FaUserDoctor style={{ marginRight: '8px' }} />Campus Connect
 </a>
      
       <ul className='md:flex items-start gap-5 font-medium hidden'>
         <NavLink to='/' >
           <li className='py-1'>HOME</li>
-          <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
+          <hr className='border-none outline-none h-0.5 bg-[primary] w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to='/doctors' >
-          <li className='py-1'>ALL DOCTORS</li>
+          <li className='py-1'>ALL FACULTIES</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to='/about' >
-          <li className='py-1'>ABOUT</li>
+          <li className='py-1'>EVENTS</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
         <NavLink to='/contact' >
@@ -65,13 +65,13 @@ const Navbar = () => {
         <div className={`md:hidden ${showMenu ? 'fixed w-full' : 'h-0 w-0'} right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
           <div className='flex items-center justify-between px-5 py-6'>
           <a href='#' style={{ display: 'flex', alignItems: 'center', fontSize: '1.2em' }}>
-  <FaUserDoctor style={{ marginRight: '8px' }} />Prescripto
+  <FaUserDoctor style={{ marginRight: '8px' }} />Campus COnnect
 </a>
             <img onClick={() => setShowMenu(false)} src={assets.cross_icon} className='w-7' alt="" />
           </div>
           <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
             <NavLink onClick={() => setShowMenu(false)} to='/'><p className='px-4 py-2 rounded full inline-block'>HOME</p></NavLink>
-            <NavLink onClick={() => setShowMenu(false)} to='/doctors' ><p className='px-4 py-2 rounded full inline-block'>ALL DOCTORS</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/doctors' ><p className='px-4 py-2 rounded full inline-block'>ALL Faculties</p></NavLink>
             <NavLink onClick={() => setShowMenu(false)} to='/about' ><p className='px-4 py-2 rounded full inline-block'>ABOUT</p></NavLink>
             <NavLink onClick={() => setShowMenu(false)} to='/contact' ><p className='px-4 py-2 rounded full inline-block'>CONTACT</p></NavLink>
           </ul>

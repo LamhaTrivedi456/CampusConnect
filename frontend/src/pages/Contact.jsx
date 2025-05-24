@@ -12,12 +12,12 @@ const Contact = () => {
       <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28 text-sm'>
         <img className='w-full md:max-w-[360px]' src={assets.header_img} alt="" />
         <div className='flex flex-col justify-center items-start gap-6'>
-          <p className=' font-semibold text-lg text-gray-600'>OUR OFFICE</p>
-          <p className=' text-gray-500'>Lekki Ikate <br /> Lagos, Nigeria</p>
-          <p className=' text-gray-500'>Tel: (415) 555-0132 <br /> Email: Prescripto@gmail.com</p>
-          <p className=' font-semibold text-lg text-gray-600'>CAREERS AT Prescripto</p>
-          <p className=' text-gray-500'>Learn more about our teams and job openings.</p>
-          <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+          <p className=' font-semibold text-lg text-gray-600'>MIT-ADT</p>
+          <p className=' text-gray-500'> <br /> </p>
+          <p className=' text-gray-500'>Cont: 9664428271 <br /> Email: lamhatrivedi@gmail.com</p>
+          <p className=' font-semibold text-lg text-gray-600'></p>
+          <p className=' text-gray-500'>Feedback</p>
+          <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>FeedbackForm</button>
         </div>
       </div>
 
